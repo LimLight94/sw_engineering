@@ -79,7 +79,39 @@
         - 기능이 구현될때까지 모든 요구사항이 자세히 정의 되자않으므로 공통 시스템을 식별 하기 어려움
         - 특정 specification 이 개발과 함께 구현되므로 전체 요구사항과 충돌이 날 수 있다.
 # Critical System
-  - 작성필요
+  - System dependability (시스템 신뢰성)
+    - Usefulness , trustworthiness are not same
+    - 신뢰성이 낮다면 사용자가 거부하거나 , 높은 복구비용으로 손실을 야기함
+    - 신뢰성의 분류
+      - Survivability : 외부공격으로 정상유지됨
+      - Availability : 요청한 결과를 가져다주는 확률
+      - Reilability : 서비스가 명시된대로 수행될 확률
+        - Reiliability terminology
+          - System failure
+            - 시스템이 사용자가 예상한 행동을 제공하지않는 상황
+          - System error
+            - system failure 로 이어질수 있는 잘못된 시스템 상태
+          - System fault
+            - error 를 일으 킬수 있는 상태 ex)변수 초기화의 실수
+          - Human error or mistake : 인간의 실수 
+        - perception of reliability (신뢰도의 인식)
+          - 신뢰도 수준이 사용자 인식의 절대적 기준은 아님
+          - 같은 신뢰도 수준이어도 와이퍼의 신뢰도와 엔진의 신뢰도는 사용자에게 신뢰의 가중치가 다름
+        - 오류 방지 방법
+          - 오류 감지 및 제거
+          - 런타임 기술을 이용하여 system error 가 system failure 로 이어지지 않게 한다. 
+      - Safety : 사람의 안전을 보장하는 시스템 속성
+        - 스펙대로 행동하여 reiliable 하더라도 unsafy한 케이스 존재 Ex) 엘레베이터 문 닫힘
+        - Safety terminology
+          - Accident : 실제 일어난 사건
+          - Hazard : 잠재적 위험상태
+          - Damage : 손실율
+      - Security : 시스템 자체를 보호하는 능력
+        - 데이터의 손상,기밀정보의 공개 를 야기
+        - assurance
+          - 취약성 회피 ex)인트라넷
+          - 공격 탐지 및 제거 ex)바이러스 검사
+          - 손상된 정보를 복원 하도록 ex) 백업
 # Agile SW
   - 개요 및 특징
     - 1990년대 후반 개발 시간을 대폭 단축하기 위해 등장한 방법론
