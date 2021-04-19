@@ -171,6 +171,47 @@
       - agile은 새로운 소프트웨어를 만들때 용이함 , but 큰 회사의경우 유지보수에 많은 비용을 사용
       - 문서부족으로 유지보수가 어려움
 # Requirements
-  - 작성필요
+  - User requirements
+    - 자연어로 된 설명으로 제공하는 서비스 및 운영상의 제약을 나타내는 다이어그램 (고객을 위한)
+  - System requirements
+    - 서비스 기능 및 운영 제약 에 대한 구체적으로 구조화된 문서 계약의 일부가됨
+  - Functional and non-functional requirements 
+  - Requirements engineering processes 
+  - Requirements elicitation
+  - Requirements specification 
+  - Requirements validation
+  - Requirements change
 # System modeling
-  - 작성필요
+  - 특징
+    - system modeling 은 추상적인 모델 프로세스
+    - UML 을 이용하여 그래픽으로 모델링
+    - 고객의 요구사항을 이해하는데 도움
+  - Context models
+    - 시스템 외부와 내부의 관계를 보여줌
+    - 세부적인 방식이 아닌 다른 시스템 들과의 관계를 보여줌
+  - Interaction models
+    - use case modeling
+      - 유즈 케이스 하나당 하나의 태스크를 표현
+    - sequence diagrams
+      - 순차적으로 일어나는 인터렉션을 수직적으로 표현
+  - Structural models
+    - 시스템 아키텍쳐를 논의하는 모델, 구성요소관점에서 시스템의 구성을 보여줌
+    - Class Diagram
+      - 객체지향 시스템 모델을 개발할때 사용
+      - 클래스 간의 관계를 1:1 1:N 등으로 나타냄
+    - Generalization
+      - 객체지향의 상속 개념과 일치하도록
+      - 모델을 일반화하여 상위 하위 개념으로 나눔
+    - Obejct aggregation(객체 집합)
+      - 컬렉션인 클래스가 어떤 클래스들로부터 구성되어있는지 나타내줌
+  - Behavioral models
+    - 자극(이벤트) 로인하여 동적으로 동작되는 모델을 나타냄
+    - Data-driven modeling
+      - 상대적으로 외부이벤트가 아닌 시스템에서 입력되는 데이터에 의해 제어됨
+      - 데이터 처리및 관련 출력 생성의 작업을 보여줌
+    - Event-driven modeling
+      - 외부 및 내부 이벤트에 어떻게 반응하는지 보여줌
+      - State machine models
+        - 자극에 대한 시스템 반응을 보여줌
+        - 시스템 상태를 노드 , 이벤트를 노드사이의 원으로 보여줌
+        - UML 의 필수 요소
