@@ -77,10 +77,65 @@
         - 기능이 구현될때까지 모든 요구사항이 자세히 정의 되자않으므로 공통 시스템을 식별 하기 어려움
         - 특정 specification 이 개발과 함께 구현되므로 전체 요구사항과 충돌이 날 수 있다.
 # 3.Critical System
-
-
+  
 # 3.Agile SW
-
+  - 개요 및 특징
+    - 1990년대 후반 개발 시간을 대폭 단축하기 위해 등장한 방법론
+    - 평가를 위한 새로운 버전을 delivert
+    - 개발을 돕기위한 자동화 테스트도구 사용
+    - 문서를 최소하하고 코드에 집중
+    - 과도한 재작업 없이 변경된 요구사항에 신속히 대응
+    - 고객이 개발프로세스에 참여
+  - Plan-driven 과 agile 의 차이점
+    - requirements specification(요구사항 정의) 단계를 없앰
+  - Agile methods
+    - Customer involvement(고객참여)
+      - 고객은 개발프로세스에 참여하고 요구사항의 우선순위를 정하고 평가함
+    - Embrace change(변화 수용)
+      - 변경될 요구사항을 예상하고 수용하도록 설계
+    - Maintain simplicity(단순성 유지)
+      - 시스템의 복잡성을 제거하기 위해 노력
+  - Agile dvelopment techniques
+    - XP(Extreme Programming)
+      - 새버전은 하루에도 여러번 빌드될수 있음
+      - 고객에게 2주마다 sw 제공
+      - 모든 빌드에 대하여 테스트 적용, 성공시 빌드 승인
+    - On-site customer
+      - xp개발팀의 구성원으로서 여러고객의 입장을 대표함
+    - 소규모의 릴리즈를 통해 점진적 개발
+    - 지속적인 리팩토링을 통해 단순성 유지
+    - pair 프로그래밍
+      - 팀원이 퇴사시에 전반적인 위험을 줄여줌
+      - 항상 효율적인것은 아님
+    - 사용자의 요구사항은 스토리 or 시나리오 카드로 표현
+    - Test-driven development
+      - 구현전 테스트 코드를 작성 : 요구사항이 명확해짐
+      - 테스트 자동화 구현 ex) JUnit
+      - 기능추가시 이전 모든 테스트가 실행됬으므로 새기능의 오류를 확인가능
+      - 테스트는 항상 완벽할수 없음
+      - diplay 단 로직,화면간의 워크플로우에 대한 unit테스트 작성 어려움
+  - Agile project management
+    - Scrum : 반복적인 개발관리에 초점을 맞춘 agile 방법
+      - 초기단계에 일반적인 목표를 설정,아키텍쳐 설계
+      - followed by a series of sprint cycles, where each cycle develops an increment of the system
+      - 프로젝트를 마무리하고 필수문서를 작성하여 프로젝트를 평가함
+    - Scrum terminology
+      - Product backlog : 프로젝트 Toto list
+      - Srum : 스크럼팀의 짧은 일일 회의
+      - ScrumMaster : 효율적으로 팀을 안내 팀은 고객과 격리되어 외부 커뮤니케이션은 master를 통해전달
+      - Sprint : 개발 반복 주기 통상 2주~4주
+    - Scrum 장점
+      - 제품은 관리 및 이해가능한 단위로 세분화됨
+      - 불안정한 요구사항으로 진행이 방해되지 않음
+      - 고객은 제때 제품을 받아보고 작동방식에 대한 피드백을 주고받을수 있다.
+      - 고객 과 개발자간 신뢰가 확립됨
+  - Scaling aglie methods 
+    - scaling up : 작은 팀에서 개발할수 없는 큰 소프트웨어를 개발할때 적용
+    - scaling out : 큰조직에서도 agile 을 적용할 수 있도록
+    - 문제점
+      - 큰규모회사의 경우 formal 한 형태로 개발하기 떄문에 agile 하기 어려움
+      - agile은 새로운 소프트웨어를 만들때 용이함 , but 큰 회사의경우 유지보수에 많은 비용을 사용
+      - 문서부족으로 유지보수가 어려움
 # 4.Requirements
 
 # 5.System modeling
