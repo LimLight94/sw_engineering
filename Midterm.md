@@ -4,15 +4,17 @@
 - 단답형
 - 서술형 (어떤것과 어떤것의 차이를 서술하라 1,2줄)
 # 목차
-  - ### [1.Introduction](#1introduction)
-  - ### [2.SW_Processes](#2sw_processes)
-  - ### [3.Critical System](#3critical-system)
-  - ### [3.Agile SW](#3agile-sw)
-  - ### [4.Requirements](#4requirements)  
-  - ### [5.System modeling](#5system-modeling)  
-# 1.Introduction
+  - ### [1.Introduction](#introduction)
+  - ### [2.SW_Processes](#sw-processes)
+  - ### [3_1.Critical System](#critical-system)
+  - ### [3_2.Agile SW](#agile-sw)
+  - ### [4.Requirements](#requirements)  
+  - ### [5.System modeling](#system-modeling)  
 
-# 2.SW_Processes
+
+# Introduction
+  - 작성필요
+# SW Processes
   - Specification : 요구사항 정의
   - Design and implementation(설계 및 구현) : 시스템을 정의하고 구현
   - Validation(검증) : 요구를 수행하는지 확인
@@ -76,9 +78,9 @@
         - 기능단위별로 제공할수 있는 공통적인 시스템이 있어야 한다.
         - 기능이 구현될때까지 모든 요구사항이 자세히 정의 되자않으므로 공통 시스템을 식별 하기 어려움
         - 특정 specification 이 개발과 함께 구현되므로 전체 요구사항과 충돌이 날 수 있다.
-# 3.Critical System
-  
-# 3.Agile SW
+# Critical System
+  - 작성필요
+# Agile SW
   - 개요 및 특징
     - 1990년대 후반 개발 시간을 대폭 단축하기 위해 등장한 방법론
     - 평가를 위한 새로운 버전을 delivert
@@ -136,6 +138,7 @@
       - 큰규모회사의 경우 formal 한 형태로 개발하기 떄문에 agile 하기 어려움
       - agile은 새로운 소프트웨어를 만들때 용이함 , but 큰 회사의경우 유지보수에 많은 비용을 사용
       - 문서부족으로 유지보수가 어려움
-# 4.Requirements
-
-# 5.System modeling
+# Requirements
+  - 작성필요
+# System modeling
+  - 작성필요
