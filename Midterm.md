@@ -175,10 +175,24 @@
     - 자연어로 된 설명으로 제공하는 서비스 및 운영상의 제약을 나타내는 다이어그램 (고객을 위한)
   - System requirements
     - 서비스 기능 및 운영 제약 에 대한 구체적으로 구조화된 문서 계약의 일부가됨
-  - Functional and non-functional requirements 
-  - Requirements engineering processes 
+  - Functional and non-functional 
+    - Functional
+      - 시스템 이 제공해야하는 행동,반응,작동 에대한 requirements
+      - 요구사항은 정확하게 명시되어야 한다.
+    - Non-functional
+      - 개발 프로세스에 대한 제약,표준 과 같은것
+      - 시간,크기,교육시간 등등 이 될 수 있음
   - Requirements elicitation
-  - Requirements specification 
+    - 요구사항 발견 
+    - 요구사항 분류 및 구성 
+    - 요구사항 우선순위 및 협상
+    - 요구사항을 정리하여 문서화
+  - Requirements specification
+    - requirements and design are inseparable
+    - natural language 문제점
+      - 명료성 저하
+      - 요구사항 혼란
+      - 다른 요구사항들이 함꼐 표현될 수 있음
   - Requirements validation
   - Requirements change
 # System modeling
