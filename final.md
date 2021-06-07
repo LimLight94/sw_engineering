@@ -1,0 +1,267 @@
+# 소웨공 기말 정리
+
+# 목차
+  - ### [1.Ch6_Architectural_design](#architectural-design)
+  - ### [2.Ch7_Implementation](#implementation)
+  - ### [3.Ch8.Testing](#testing)
+  - ### [4.Ch9_Evolution](#evolution)
+  - ### [5.Ch15_Realtime](#realtime)  
+  - ### [6.Ch22_Project_management](#projectmanagement)  
+
+# Architectural Design
+- 이용용도
+	- 이해당사자들끼리의 커뮤니케이션
+	- 시스템분석하는데 이용
+	- 큰규모일때에 재사용
+	- 문서화
+- 시스템특성(모든측면에서 장점을 가질수 없음)
+	- 퍼포먼스
+	- 보안성
+	- 안전성
+	- 이용성
+	- 유지보수성
+- 디자인 결정 고민요소
+	- 템플릿역할을 할수 있는 일반적인 아키텍쳐인가?
+	- 시스템이 하드웨어코어와 프로세서의 어떻게 분산되는지?
+	- 어떤 패턴이 사용될수 있는지?
+	- 시스템을 구성에 사용되는 기본접근 방식은 무엇인지?
+	- 시스템 구성요소 작동을 위해 어떤전략이 사용되는지?
+	- 시스템 하위구성요소들이 어떻게 분해될수 있는지?
+	- 시스템의 논펑셔널 요구사항을 제공하는데 가장 적합한 아키텍쳐조직은 무엇인가?
+	- 어떻게 문서화 해야 하는가?
+- 아키텍쳐패턴
+	- MVC
+		- 이용:데이터와 상호작용하는 여러방법이 있을때 사용
+		- 장점:데이터,뷰가 독립적으로 변경될수 있고,동일한데이터를 여러방식으로 보여줄수 있음
+		- 단점:상호작용이 간단한 케이스에선 코드가 복잡해짐
+	- Layered 아키텍쳐
+		- 이용:보단단계가나뉘는요구사항,최상단에 추가기능구현,여러팀개발
+		- 장점:한 계층자체를 교체해서 사용가능
+		- 단점:인접레이어가 아닌 곳에 접근하려할때 성능문제
+	- Repository 아키텍쳐
+		- 이용:많은 정보를 저장할때
+		- 장점:각 컴포넌트들이 독립적으로 존재,중앙에서 처리가능
+		- 단점:리포지토리 하나로인해 전체시스템 영향받음
+	- Client-Server 아키텍쳐
+		- 이용:프린터,다양한 위치에서 접근해야할때
+		- 장점:네트워크에물려 새로운기능 제공
+		- 단점:denial of service 공격에 취약함
+	- Pipe and filter 패턴
+		- 이용:데이터 처리 프로그램에 이용
+		- 장점:직관적으로 이해가능,재사용가능,개선용이
+		- 단점:블럭간 데이터 포맷에 대한 합의가 필요
+- Application 아키텍쳐
+	- 이용:
+		- 기존의것을 체크리스트로 활용
+		- 개발팀의 일을 구성할때 참고
+		- 기존아키텍쳐의 일부 컴포넌트 재사용
+	- 종류:
+		- Data processing app
+		- Transaction processing app : 이커머스,예약
+		- Event processing systems
+		- Language processing systems : 컴파일러,command,interpreter
+	- Transaction:
+		- 유저요청에의해 db 갱신
+		- 불시에 들어오는 요청에 대응
+
+# Implementation
+- Build or Buy
+  - 개발하지않고 구매하여 사용가능
+  - 장점: 빠르게 개발 가능
+  - 단점: 기능고도화 힘듬
+- Object-oriented design
+  - 객체지향 디자인
+  - 장점: 큰프로젝트에서 효과적
+  - 단점: 작은프로젝트에서 비효율
+- Object-oriented Process
+	1. context 상호작용 이해
+    2. 아키텍쳐 설계
+    3. 오브젝트 선별(경험에 의존,팁존재)
+    4. 설계 모델정의(subsystem,state,sequence 다이어그램)
+    5. 인터페이스 설계
+- Approaches to identification of class
+	- 자연어로 문법적인 접근(명사,동사)
+	- 실제 객체들에 대해 정의
+	- 동작관점에서 정의
+	- 시나리오기반 정의
+  	- ex) weather station 예시: 온도,기압,기온 측정기/날씨 데이터
+- Subsystem model
+  - show how the design is organised into logically related groups of objects
+  - 논리적으로 관련된 개체 끼리 그룹으로 묶음
+- Sequence model
+  - Objects are arranged horizontally across the top
+  - Time is represented vertically so models are read top to bottom
+  - 시간(수직),객체(수평) 나열 인터렉션 보여줌
+- State diagrams
+  - 상태들에 대해서 다이어그램을 통해 보여줌
+  - ex)running,testing,collecting....
+- Interface specification
+  - 오브젝트 사이의 인터페이스 명시
+  - 오브젝트는 여러개 인터페이스 소유 가능
+- Observer pattern
+  - 한 데이터를 여러 디스플레이에 보여줌
+  - 데이터의 갱신을 알려줌
+- 패턴종류
+  - facade pattern:점진적으로 개발된 객체의 인터페이스 정리
+  - iterator pattern:올바른 접근방법 제시
+  - decorator pattern:런타임시 기능확장
+- Implementation issues
+  - Reuse: 코드 재사용
+    - 기능찾고 검증비용
+    - 구매 비용
+    - 적용 및 수정 비용
+    - 통합,추가 비용
+  - Configuration management: 버전추적
+  - Host-target development: 개발,소비자 다른 컴퓨터 사용이슈
+- OpenSource
+  - GPL: 사용시 프로젝트 전체 오픈
+  - LGPL: 라이브러리형태로 사용시 공개의무x,수정시 공개의무o
+  - BSD: 공개의무x
+
+# Testing
+- Testing
+  - validation testing: 검증테스팅(requirement,operate)
+  - defect testing: 결함테스팅(faults)
+- V&V
+  - Verification: 문서 요구사항
+  - Validation: 유저 요구사항
+  - V&V confidence: is it fit system that fit for purpose
+- Inspection
+  - 장점:
+    - 테스트팅시 에러찾기 용이
+    - 완전한 버전이 아니어도 테스트가능
+    - 코드품질 확인가능
+  - 단점
+    - non-functional 기능 체크 불가능
+    - 실유저의 요구사항 체크 불가능
+- 테스팅 과정
+  - development testing
+    - unit test
+    - component test
+    - sytstem test
+    - object class test : 상속시 테스트 어려움
+  - release testing
+  - user testing
+- 테스팅 전략
+  - partition test
+    - input 그룹을 만들어 테스트(데이터간 경계주의)
+    - 오버플로우,엄청큰(작은)값,유효하지않은 값
+  - guideline-based test
+    - 경험에반영하여 테스트
+- Test-driven development(TDD)
+  - 실제 코드작성전 테스트코드 부터 작성
+  - 장점
+    - 디버깅 간소화
+    - 문서화기능
+    - regression testing: 점진적 개발
+
+# Evolution
+- Spiral model: 계속순환
+- Urgent change requests(긴급 요청케이스)
+  - 심각한 시스템문제
+  - os업그레이드
+  - 경쟁사 제품 출시
+- Handover Problems
+  - evolution은 agile 함
+  - evolution 과 plan-based 팀 협업시 문제
+  - plan-based: 테스트 자동화 없음
+  - agile: 문서 부족
+- Legacy ststem 교체
+  - 리스크있고 비쌈 :
+    - 코드 일관성x
+    - 언어가 구버전
+    - 문서부재
+    - 안좋은 구조
+  - 문서가 부족할 수 있음
+  - 시스템,비즈니스가 얽혀있음
+- Legacy 관리 방법
+  - 제거or비즈니스 프로세스 수정
+  - 계속 유지보수
+  - 리 엔지지어링
+  - 새로운 시스템 도입
+- 평가요소
+  - environment 측면
+    - Supplier stability(공급자 안전성)
+    - Failure rate(고장률)
+    - Age
+    - 유지보수비용
+    - Performance
+    - 상호동작성
+  - application 측면
+    - 코드 가독성
+    - 문서화가 잘되어있는지
+    - 언어(컴파일러) 지원 되는지
+    - 형상관리가 되어있는지
+    - 테스트데이터가 잘 갖추어져있는지
+- Maintenance
+  - 변경을 많이하면 시스템이 저하되고,관리하기 힘듬
+- Reengineering
+  - 레거시를 재구성,작성
+  - 장기적으로 이득
+  - 적은 리스크
+  - 활동예시
+    - 새로운언어로 변경
+    - reverseengineering
+    - 데이터 재가공
+    - 구조 향상
+  - Cost 요인
+    - 리엔지니어링의 품질에 따라
+    - 툴의 지원기능에 따라
+	- 직원의 수준에 따라
+  - Refactoring vs Reengineering
+	- refactoring: 점진적으로 개선,구조및 코드저하 방지
+	- reengineering: 유지보수 편하도록 새로운 시스템 개발
+- Bad smell 요소
+  - duplicate code: 같은로직코드
+  - long methods
+  - switch statements: 타입에대한 switch는 다형성 이용
+  - data clumping: 데이터 군집-> 캡슐화 이용
+
+# Realtime
+- Soft real-time system: ex) 스마트폰 영상촬영
+- Hard real-time system: ex) Burglar alarm system,자율주행,보안시스템,핵발전소,
+  - 주로 속도빠른 언어이용: 어셈블리,c언어
+- Periodic stimuli: 온도계,cctv
+- Aperiodic stimuli: 비주기적 자극
+- Timing constraints: 타이밍 제약
+- Process priority: 프로세스 우선순위를 두어 우선처리
+- Burglar alarm system : 리얼
+- R-T 시스템 디자인 process
+  - 자극-반응 정의
+  - timing constraints 정의
+  - 자극 처리 알고리즘 정의
+  - 스케쥴링
+- Data acquisition systems
+  - Ring buffers 이용 (코드한번보고드가자)
+  - Mutual exclusion: input 데이터 꽉찼을때
+
+# ProjectManageMent
+- Risk management
+  - 리스크 파악하고 영향 최소화
+  - 리스크를 회피할수있는 방법 찾기
+- Risk management process
+  - Risk identification
+  - Risk analysis
+  - Risk planning
+    - Avoidance  strategies(회피전략)
+    - Minimization strategies(리스크최소화전략)
+    - Contingency plans(미리 해결방안 계획)
+  - Risk monitoring
+-  Managing people
+   -  Consistency: 팀멤버를 공평하게 대우
+   -  Respect
+   -  Inclusion
+   -  Honesty
+- Need satisfaction
+  - Social: 휴게소,커뮤니케이팅장소(동호회)
+  - Esteem: 존중,보상 해주기
+  - Self-realization: 책임감 부여
+- Personality types
+  - Task-oriented people: 일에 동기부여받는 사람
+  - Interaction-oriented people: 소통 좋아하는 사람
+  - Self-oriented people: 성공과 인정을 원하는 사람
+- TeamWork
+  - Team spirit : 공동체정신
+- Assembling team
+  - 예산이 한정적
+  - 모두 경험이 많을 수 없음
